@@ -1,0 +1,13 @@
+<svg width="106.000000" height="60.000000" viewBox="0 0 106 60" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<clipPath id="clip1_2399">
+			<rect id="Logo " width="106.000000" height="60.000000" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<g clip-path="url(#clip1_2399)">
+		<path id="Union" d="M38 7L45.0078 13.6342L32 13.6265L32 45.8137L66 45.8137L66 33.5071L73 40.1338L73 7L38 7ZM65.6924 13.918L65.6924 32.7284L45.8228 13.918L65.6924 13.918ZM59.5232 41.1055L37.3801 41.1055L37.3801 19.4579L38.9453 19.4579L38.9453 39.6396L59.5232 39.6396L59.5232 41.1055Z" clip-rule="evenodd" fill="#AFB1B8" fill-opacity="1.000000" fill-rule="evenodd"/>
+	</g>
+</svg>
