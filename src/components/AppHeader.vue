@@ -8,8 +8,8 @@
       <nav class="navbar">
         <div class="menu">
           <ul class="menu-list">
-            <li v-for="item in items" :key="item" class="menu-list_item">
-              <a href="#">{{ item }}</a>
+            <li v-for="(item, index) in items" :key="index" class="menu-list_item">
+              <router-link to="/portfolio"> {{ item }}</router-link>
             </li>
           </ul>
         </div>
