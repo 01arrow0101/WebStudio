@@ -9,32 +9,31 @@
         <div class="menu">
           <ul class="menu-list">
             <li v-for="(item, index) in items" :key="index" class="menu-list_item">
-              <router-link to="/portfolio"> {{ item }}</router-link>
+              <router-link :to="getRoute(item)"> {{ item }}</router-link>
             </li>
           </ul>
         </div>
       </nav>
       <div class="contacts">
         <div class="email">
-          <a href="#"> {{ email }}</a>
+          <a href="mailto:email@gmail.com">email@gmail.com</a>
         </div>
         <div class="tel">
-          <a href="#">{{ tel }}</a>
+          <a href="tel:+380981111111">+38(098)111-11-11</a>
         </div>
       </div>
     </div>
     <MenuBurger
-      v-show="isActiveMenu"
+      v-if="isActiveMenu"
       @click="isActiveMenu = false"
       :items="items"
-      :email="email"
-      :tel="tel"
       :show-menu="isActiveMenu"
     />
   </header>
 </template>
 
 <script setup>
+import router from '@/router'
 import { ref } from 'vue'
 import AppLogo from './AppLogo.vue'
 import MenuBurger from './MenuBurger.vue'
@@ -42,8 +41,16 @@ import MenuBurger from './MenuBurger.vue'
 const isActiveMenu = ref(false)
 
 const items = ref(['Студія', 'Портфоліо', 'Контакти'])
-const email = ref('email@gmail.com')
-const tel = ref('+38(098)1111111')
+
+const routes = {
+  'Студія': '/',
+  'Портфоліо': '/portfolio',
+  'Контакти': '/contacts'
+}
+
+function getRoute(item) {
+  return routes[item] || '/';
+}
 </script>
 
 <style lang="sass" scoped>

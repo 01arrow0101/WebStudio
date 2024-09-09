@@ -1,54 +1,54 @@
 <template>
-  <div class="menu-burger" :style="{left: showMenu ? '-100%' : '0'}">
+  <div class="menu-burger">
     <button class="close-btn">X</button>
-     <nav class="navbar">
-        <div class="menu">
-          <ul class="menu-list">
-            <li v-for="item in items" :key="item" class="menu-list_item">
-              <a href="#">{{ item }}</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <div class="contacts">
-        <div class="email">
-          <a href="#"> {{ email }}</a>
-        </div>
-        <div class="tel">
-          <a href="#">{{ tel }}</a>
-        </div>
-      </div>
-      <div class="social">
-        <ul class="social-list">
-          <li 
-          v-for="item in social"
-          :key="item"
-          class="social-list_item">
-            <a href="#"> {{ item }}</a>
+    <nav class="navbar">
+      <div class="menu">
+        <ul class="menu-list">
+          <li
+            v-for="(item, index) in items"
+            :key="index"
+            class="menu-list_item"
+          >
+            <router-link to="">{{ item }}</router-link>
           </li>
         </ul>
       </div>
+    </nav>
+    <div class="contacts">
+      <div class="email">
+        <a href="#"> {{ email }}</a>
+      </div>
+      <div class="tel">
+        <a href="#">{{ tel }}</a>
+      </div>
+    </div>
+    <div class="social">
+      <ul class="social-list">
+        <li v-for="item in social" :key="item" class="social-list_item">
+          <a href="#"> {{ item }}</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue"
+import { ref } from "vue";
 const props = defineProps({
-  items:{
+  items: {
     type: Array,
-    required: true
+    required: true,
   },
   email: String,
   tel: String,
-  showMenu: Boolean
-})
+  showMenu: Boolean,
+});
 
-const social = ['Instagram', 'twitter', 'Facebook', 'LinkedIn']
-const items = ref(props.items)
-const email = ref(props.email)
-const tel = ref(props.tel)
-const showMenu = ref(props.showMenu)
-
+const social = ["Instagram", "twitter", "Facebook", "LinkedIn"];
+const items = ref(props.items);
+const email = ref(props.email);
+const tel = ref(props.tel);
+const showMenu = ref(props.showMenu);
 </script>
 
 <style lang="sass" scoped>
@@ -68,7 +68,7 @@ const showMenu = ref(props.showMenu)
   width: 20px
   height: 20px
   top: 24px
-  right: 24px    
+  right: 24px
 .menu-list
   width: 100%
   display: flex
@@ -96,7 +96,7 @@ const showMenu = ref(props.showMenu)
   margin-bottom: 64px
 .tel
   font-size: 2.125rem
-  line-height: 40px  
+  line-height: 40px
 .email,
 .tel
   &:hover,

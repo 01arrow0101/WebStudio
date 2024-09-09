@@ -1,12 +1,19 @@
 <template>
-<button 
-v-for="name, index in btns"
-:key="index"
- class="btn">{{ name }}</button>
+  <button @click="$emit('action', nameBtn.name)" class="btn">{{ nameBtn.name }}</button>
 </template>
 
 <script setup>
-const btns = ['Усі','Веб-сайти','Додатки','Дизайн','Маркетинг']
+import { ref } from "vue";
+
+const props = defineProps({
+  btn: {
+    type: Object,
+    required: true,
+  },
+});
+const nameBtn = ref(props.btn);
+
+const emit = defineEmits(["action"]);
 </script>
 
 <style lang="sass" scoped>
@@ -24,5 +31,4 @@ const btns = ['Усі','Веб-сайти','Додатки','Дизайн','Ма
     background: $primary
     color: $white
     cursor: pointer
-    
 </style>
