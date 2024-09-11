@@ -28,6 +28,7 @@ const icons = ["instagram", "twitter", "facebook", "linkedin"];
   width: 44px
   height: 44px
   border-radius: 50%
+  background: rgba(255, 255, 255, 10%)
   &:has(.current)
     color: $grey
   &:hover

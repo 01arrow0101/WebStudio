@@ -9,7 +9,7 @@
             :key="index"
             class="menu-list_item"
           >
-            <router-link to="">{{ item }}</router-link>
+            <router-link :to="item.path">{{ item.title }}</router-link>
           </li>
         </ul>
       </div>
@@ -36,7 +36,7 @@
 import { ref } from "vue";
 const props = defineProps({
   items: {
-    type: Array,
+    type: Object,
     required: true,
   },
   email: String,

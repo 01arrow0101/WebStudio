@@ -9,6 +9,7 @@
           :btn="name"
           @action="filterProduct"
         />
+        <button class="btn" @click="sort">Сортування А-Я</button>
       </div>
       <div v-if="!filterActive" class="grid">
         <Card v-for="card in cards" :key="card.name" :card="card" />
@@ -128,10 +129,29 @@ function filterProduct(category) {
     filterCard.value = cards.value.filter((el) => el.category === category);
   }
 }
+
+function sort() {
+  filterCard.value = cards.value.sort((a, b) =>
+    a.category.localeCompare(b.category)
+  );
+}
 </script>
 
 <style lang="sass" scoped>
 @import '/src/assets/style.sass'
+.btn
+  border-radius: 4px
+  background: rgb(245, 244, 250)
+  padding: 6px 22px
+  font-size: 16px
+  font-weight: 500
+  line-height: 26px
+  letter-spacing: .03em
+  border-color: transparent
+  &:hover
+    background: $primary
+    color: $white
+    cursor: pointer
 .container
   max-width: 73.125rem
   margin: 0 auto

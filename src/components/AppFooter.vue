@@ -11,6 +11,9 @@
         <div class="title">приєднуйтесь</div>
         <SocialIcon />
       </div>
+      <div class="subscribe">
+        <Subscribe />
+      </div>
     </div>
   </div>
 </template>
@@ -19,6 +22,7 @@
 import Address from "./Address.vue";
 import AppLogo from "./AppLogo.vue";
 import SocialIcon from "./SocialIcon.vue";
+import Subscribe from "./Subscribe.vue";
 </script>
 
 <style lang="sass" scoped>
@@ -34,7 +38,8 @@ import SocialIcon from "./SocialIcon.vue";
 
 .margin
   margin-bottom: 20px
-
+.social
+  padding-top: 12px
 .title
   text-transform: uppercase
   font-size: 14px
@@ -42,6 +47,7 @@ import SocialIcon from "./SocialIcon.vue";
   line-height: 16px
   letter-spacing: 0.03em
   color: $white
-  padding-top: 12px
   margin-bottom: 20px
+.subscribe
+  padding-top: 20px  
 </style>
