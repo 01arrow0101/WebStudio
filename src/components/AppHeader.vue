@@ -8,25 +8,25 @@
       <nav class="navbar">
         <div class="menu">
           <ul class="menu-list">
-            <li v-for="(item, index) in items" :key="index" class="menu-list_item">
-              <router-link :to="getRoute(item)"> {{ item }}</router-link>
+            <li v-for="(item, index) in ROUTER_PATH" :key="index" class="menu-list_item">
+              <router-link :to="item.path"> {{ item.title }}</router-link>
             </li>
           </ul>
         </div>
       </nav>
       <div class="contacts">
         <div class="email">
-          <a href="mailto:email@gmail.com">email@gmail.com</a>
+          <a href="mailto:info@devstudio.com">info@devstudio.com</a>
         </div>
         <div class="tel">
-          <a href="tel:+380981111111">+38(098)111-11-11</a>
+          <a href="tel:+380981111111">+38 096 111 11 11</a>
         </div>
       </div>
     </div>
     <MenuBurger
       v-if="isActiveMenu"
       @click="isActiveMenu = false"
-      :items="items"
+      :items="ROUTER_PATH"
       :show-menu="isActiveMenu"
     />
   </header>
@@ -35,22 +35,11 @@
 <script setup>
 import router from '@/router'
 import { ref } from 'vue'
+import { ROUTER_PATH } from '../router/path.js'
 import AppLogo from './AppLogo.vue'
 import MenuBurger from './MenuBurger.vue'
 
 const isActiveMenu = ref(false)
-
-const items = ref(['Студія', 'Портфоліо', 'Контакти'])
-
-const routes = {
-  'Студія': '/',
-  'Портфоліо': '/portfolio',
-  'Контакти': '/contacts'
-}
-
-function getRoute(item) {
-  return routes[item] || '/';
-}
 </script>
 
 <style lang="sass" scoped>
@@ -137,7 +126,28 @@ function getRoute(item) {
     display: none
 .email,
 .tel
+  cursor: pointer
+  padding-left: 26px
+  position: relative
+
+  &::after
+    content: ''
+    position: absolute
+    top: 50%
+    left: 0
+    transform: translateY(-50%)
+    width: 16px
+    height: 12px
+    background: url('../src/assets/icons/mail.svg') center / cover no-repeat
+
   &:hover,
   &:active
     color: $primary
+.tel
+  padding-left: 20px
+  &:after
+    width: 10px
+    height: 16px
+    background: url('../src/assets/icons/phone.svg') center / contain no-repeat
+
 </style>
