@@ -8,8 +8,8 @@
       <nav class="navbar">
         <div class="menu">
           <ul class="menu-list">
-            <li v-for="(item, index) in ROUTER_PATH" :key="index" class="menu-list_item">
-              <router-link :to="item.path"> {{ item.title }}</router-link>
+            <li v-for="(item, key) in ROUTER_PATH" :key="key" :class="{ 'active': activeKey === key }" class="menu-list_item">
+              <router-link :to="item.path" @click.prevent="handleClick(key, item.path)"> {{ item.title }}</router-link>
             </li>
           </ul>
         </div>
@@ -33,13 +33,32 @@
 </template>
 
 <script setup>
-import router from '@/router'
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 import { ROUTER_PATH } from '../router/path.js'
 import AppLogo from './AppLogo.vue'
 import MenuBurger from './MenuBurger.vue'
 
 const isActiveMenu = ref(false)
+const activeKey = ref(null)
+const router = useRouter()
+const route = useRoute()
+
+function handleClick(key, path) {
+  activeKey.value = key
+  router.push(path)
+}
+
+// // Инициализация активного ключа при монтировании компонента
+const initActiveKey = () => {
+  const values = Object.values(ROUTER_PATH)
+  const index = values.findIndex(item => item.path === route.path)
+  if (index !== -1) {
+    activeKey.value = Object.keys(ROUTER_PATH)[index]
+  }
+}
+
+initActiveKey()
 </script>
 
 <style lang="sass" scoped>
@@ -101,14 +120,28 @@ const isActiveMenu = ref(false)
   align-items: center
   gap: 50px
   &_item
+    position: relative
     font-size: .875rem
     font-weight: 500
     line-height: 16px
     letter-spacing: 0.02em
     color: $black
+    &.active
+      position: relative
+      color: $primary
+      &::after
+        content:''
+        position: absolute
+        bottom: -32px
+        left: 0
+        width: 100%
+        height: 4px
+        border-radius: 2px
+        background: $primary
     &:hover,
     &:active
       color: $primary
+      transition: all .4s ease
 
 .contacts
   display: flex
@@ -149,5 +182,4 @@ const isActiveMenu = ref(false)
     width: 10px
     height: 16px
     background: url('../src/assets/icons/phone.svg') center / contain no-repeat
-
 </style>
