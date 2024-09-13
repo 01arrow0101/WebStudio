@@ -55,4 +55,8 @@ a {
 body {
   font-family: Roboto;
   color: #212121;
+}
+
+#app {
+  position: relative;
 }/*# sourceMappingURL=style.css.map */

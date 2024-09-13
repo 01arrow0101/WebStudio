@@ -1,10 +1,12 @@
 <script setup>
 import { RouterView } from 'vue-router'
+import Modal from '@/components/Modal//Modal.vue'
 </script>
 
 <template>
-  <RouterView />
+  <Modal/>
+  <RouterView/>
 </template>
 
-<style scoped>
+<style lang="sass" scoped>
 </style>

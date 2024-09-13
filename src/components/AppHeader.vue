@@ -9,7 +9,7 @@
         <div class="menu">
           <ul class="menu-list">
             <li v-for="(item, key) in ROUTER_PATH" :key="key" :class="{ 'active': activeKey === key }" class="menu-list_item">
-              <router-link :to="item.path" @click.prevent="handleClick(key, item.path)"> {{ item.title }}</router-link>
+              <router-link :to="item.path" @click="handleClick(key)"> {{ item.title }}</router-link>
             </li>
           </ul>
         </div>
@@ -25,7 +25,7 @@
     </div>
     <MenuBurger
       v-if="isActiveMenu"
-      @click="isActiveMenu = false"
+      @close="isActiveMenu = false"
       :items="ROUTER_PATH"
       :show-menu="isActiveMenu"
     />
@@ -33,23 +33,21 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue'
-import { useRouter, useRoute } from 'vue-router'
+import { ref, onMounted } from 'vue'
+import {  useRoute } from 'vue-router'
 import { ROUTER_PATH } from '../router/path.js'
 import AppLogo from './AppLogo.vue'
 import MenuBurger from './MenuBurger.vue'
 
 const isActiveMenu = ref(false)
 const activeKey = ref(null)
-const router = useRouter()
 const route = useRoute()
 
-function handleClick(key, path) {
+function handleClick(key) {
   activeKey.value = key
-  router.push(path)
 }
 
-// // Инициализация активного ключа при монтировании компонента
+// Инициализация активного ключа при монтировании компонента
 const initActiveKey = () => {
   const values = Object.values(ROUTER_PATH)
   const index = values.findIndex(item => item.path === route.path)
@@ -58,7 +56,9 @@ const initActiveKey = () => {
   }
 }
 
-initActiveKey()
+onMounted(() => {
+  initActiveKey()
+})
 </script>
 
 <style lang="sass" scoped>
