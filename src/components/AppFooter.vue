@@ -3,7 +3,7 @@
     <div class="container">
       <div class="address">
         <div class="margin">
-          <AppLogo />
+          <AppLogo className="color"/>
         </div>
         <Address />
       </div>

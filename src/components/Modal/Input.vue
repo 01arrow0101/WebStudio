@@ -1,33 +1,64 @@
 <template>
-<label :for="label">
-  <input v-model="value" :type="type" :placeholder="placeholder" :name="label">
-</label>
+  <label :for="label">
+    {{ title }}
+    <input
+      :id="label"
+      v-model="inputValue"
+      :type="type"
+      :placeholder="placeholder"
+      :name="label"
+      class="input"
+      :class="className"
+    />
+  </label>
 </template>
 
 <script setup>
-import { ref } from "vue"
+import { ref, watch } from "vue";
 
 const props = defineProps({
-  label:{
+  title: String,
+  label: {
     type: String,
-    required :true
+    required: true,
   },
   type: {
     type: String,
     default: 'text',
-    validation(value){
-      return ['text', 'password','number'].includes(value)
-    }
   },
-  placeholder: String,
-  required: false,
-  default: '',
-})
+  placeholder: {
+    type: String,
+    default: '',
+  },
+  modelValue: {
+    type: String,
+    default: '',
+  },
+  className:{
+    type: String,
+    required: false
+  }
+});
 
-const value = ref('')
+const emit = defineEmits(['update:modelValue']);
+
+const inputValue = ref(props.modelValue);
+
+watch(inputValue, (newValue) => {
+  emit('update:modelValue', newValue);
+});
 </script>
 
 <style lang="sass" scoped>
-input
+label
+  display: flex
+  flex-direction: column
+  gap: 4px
+.input
   width: 100%
-</style>  
+  height: 40px
+  margin-bottom: 10px
+  border: 1px solid rgba(33, 33, 33, 0.2)
+  border-radius: .25rem
+  padding-left: 46px
+</style>
