@@ -9,7 +9,9 @@
 <script setup>
 import Svg from "./Svg.vue";
 
+
 const company = ["1", "2", "3", "4", "5", "6"];
+
 </script>
 
 <style lang="sass" scoped>
@@ -35,5 +37,4 @@ const company = ["1", "2", "3", "4", "5", "6"];
     cursor: pointer
     &:has(.current)
       color: $primary
-    
 </style>

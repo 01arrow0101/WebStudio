@@ -1,7 +1,7 @@
 <template>
   <div class="business">
-      <h1 class="title">{{ title }}</h1>
-      <div class="button">
+      <h1 class="title wow animate__animated animate__lightSpeedInLeft">{{ title }}</h1>
+      <div class="button animate__animated animate__lightSpeedInRight">
         <AppButton @action="show">Замовити послугу</AppButton>
     </div>
   </div>
@@ -21,6 +21,7 @@ const emit = defineEmits(['showModal']);
 function show() {
   emit('showModal');
 }
+
 </script>
 
 <style lang="sass" scoped>

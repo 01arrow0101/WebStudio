@@ -1,5 +1,8 @@
 <template>
-  <div class="container">
+  <div class="container" 
+    data-aos="fade-up"
+    data-aos-duration="1500"
+    data-aos-anchor-placement="bottom-bottom">
     <div class="title">
       <h2>Постійні клієнти</h2>
     </div>

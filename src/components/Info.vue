@@ -1,10 +1,12 @@
 <template>
   <div class="root">
     <div class="info">
-      <div class="title">
+      <div class="title" data-aos="fade-left" data-aos-duration="1500">
         <h2>Чим ми займаємося</h2>
       </div>
-      <div class="img-row">
+      <div class="img-row" data-aos="fade-up"
+    data-aos-duration="2000"
+    data-aos-anchor-placement="bottom-bottom">
         <div v-for="img in images" :key="img.alt" class="img">
           <img :src="img.src" :alt="img.alt" />
         </div>

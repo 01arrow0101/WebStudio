@@ -4,6 +4,7 @@
   <main class="main">
     <Business @showModal="showModal" />
     <Peculiarities class="cards" />
+    <Info />
     <OurCommand />
     <Clients />
   </main>
@@ -19,6 +20,7 @@ import Modal from "@/components/Modal/Modal.vue";
 import AppHeader from "../components/AppHeader.vue";
 import Business from "../components/Business.vue";
 import Peculiarities from "../components/Peculiarities.vue";
+import Info from "../components/Info.vue";
 import OurCommand from "../components/OurCommand.vue";
 import Clients from "../components/Clients.vue";
 import AppFooter from "../components/AppFooter.vue";

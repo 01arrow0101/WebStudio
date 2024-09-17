@@ -1,5 +1,7 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper" data-aos="fade-up"
+    data-aos-duration="1500"
+    data-aos-anchor-placement="bottom-bottom">
     <div v-for="card in cards" :key="card.title" class="card">
       <div class="img">
         <img :src="card.img" :alt="card.alt" />

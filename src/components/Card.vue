@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card" >
     <div class="img">
       <div class="description">{{card.description}}</div>
       <img :src="card.src" :alt="card.name" />

@@ -1,7 +1,7 @@
 <template>
   <transition  name="overlay">
     <div v-if="isShowModal" class="wrapper">
-        <div class="modal">
+        <div class="modal animate__animated animate__backInDown">
           <div class="close">
             <button @click="closeModal">X</button>
           </div>
@@ -97,7 +97,6 @@ function closeModal() {
 .overlay-enter-from,
 .overlay-leave-to
   opacity: 0
-  transform: translateY(-100%)
 
 .overlay-enter-active,
 .overlay-leave-active

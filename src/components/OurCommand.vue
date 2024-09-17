@@ -1,6 +1,6 @@
 <template>
   <div class="root">
-    <div class="title">
+    <div class="title" data-aos="fade-right" data-aos-duration="1500">
       <h2>Наша Команда</h2>
     </div>
     <div class="persons">

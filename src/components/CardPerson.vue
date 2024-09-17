@@ -1,6 +1,8 @@
 <template>
-  <div class="root">
-    <div class="person">
+  <div class="root" data-aos="fade-up"
+    data-aos-duration="1500"
+    data-aos-anchor-placement="bottom-bottom">
+    <div class="person" >
       <img :src="person.src" :alt="person.name" />
     </div>
     <div class="info">
