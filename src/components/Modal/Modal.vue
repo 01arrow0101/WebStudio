@@ -1,5 +1,4 @@
 <template>
-  <transition  name="overlay">
     <div v-if="isShowModal" class="wrapper">
         <div class="modal animate__animated animate__backInDown">
           <div class="close">
@@ -12,7 +11,7 @@
               :key="field.label"
               :id="field.label"
               class="name col">
-              <Input :title="field.title" v-model="field.value" :label="field.label" :type="field.type" />
+              <Input :title="field.title" v-model="field.value" :label="field.label" :type="field.type"/>
               <Svg :className="field.className" :name="field.icon"></Svg>
             </div>
             <div class="commit col">
@@ -29,7 +28,6 @@
           </form>
         </div>
       </div>
-    </transition>
 </template>
 
 <script setup>
@@ -78,12 +76,12 @@ const fields = ref([
 const commit = ref('');
 
 function submitForm() {
-  const isValid = fields.value.every(field => field.value.value.length > 0) && checked.value;
-  if (isValid) {
-    console.log(checked.value, ...fields.value.map(field => field.value.value));
-  } else {
-    console.log('Ошибка');
-  }
+  // const isValid = fields.value.every(field => field.value.value.length > 0) && checked.value;
+  // if (isValid) {
+  //   console.log(checked.value, ...fields.value.map(field => field.value.value));
+  // } else {
+  //   console.log('Ошибка');
+  // }
 }
 
 function closeModal() {

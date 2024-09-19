@@ -1,0 +1,83 @@
+@import './vars'
+
+// ------------------------------------------------------
+
+.absolute
+  position: absolute
+  inset: 0
+.relative
+  position: relative
+  
+// =================
+
+.container
+  max-width: $desktop
+  margin: 0 auto
+  @media screen and ( max-width: 768px)
+    max-width: $table
+  @media screen and ( max-width: 480px)
+    max-width: $mobile
+// ================= 
+
+.center
+  text-align: center
+.left
+  text-align: left
+.right
+  text-align: right
+
+// =================
+
+.flex-center
+  display: flex
+  justify-content: center
+  align-items: center
+.row
+  display: flex
+.col
+  display: flex
+  flex-direction: column
+
+//  -------------------------------------------------------
+
+.nav-link
+  font-size: .875rem
+  font-weight: 500
+  line-height: 1rem
+  letter-spacing: 0.02em
+  @media screen and ( max-width:480px )
+    font-size: 2.5rem
+    line-height: 2.9375rem
+  &:hover,
+  &:active
+    color: $primary
+.title
+  font-size: 2.5rem
+  font-weight: 500
+  line-height: 2.9375rem
+  letter-spacing: 0.02em
+  @media screen and (max-width: 768px)
+    font-size: 1.625rem
+    font-weight: 900
+    line-height: 2.625rem
+    letter-spacing: 0.06em
+
+.title-h2
+  font-size: 2.25rem
+  font-weight: 700
+  line-height: 2.625rem
+  letter-spacing: 0.03em
+  @media screen and ( max-width: 768px)
+    font-size: 1.75rem
+    line-height: 2.0625rem
+    
+.title-h3
+  font-size: .875rem
+  font-weight: 700
+  line-height: 1rem
+  letter-spacing: 0.03em
+
+.text
+  font-size: .875rem
+  line-height: 1.5rem
+  letter-spacing: 0.03em

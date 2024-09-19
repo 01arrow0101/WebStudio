@@ -50,6 +50,7 @@ watch(inputValue, (newValue) => {
 </script>
 
 <style lang="sass" scoped>
+$border-color: rgba(33, 33, 33, 0.2)
 label
   display: flex
   flex-direction: column
@@ -58,7 +59,7 @@ label
   width: 100%
   height: 40px
   margin-bottom: 10px
-  border: 1px solid rgba(33, 33, 33, 0.2)
+  border: 1px solid $border-color
   border-radius: .25rem
   padding-left: 46px
 </style>

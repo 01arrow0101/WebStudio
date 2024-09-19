@@ -1,7 +1,6 @@
 <template>
     <AppHeader />
     <main>
-
     </main>
     <footer>
       <AppFooter />
