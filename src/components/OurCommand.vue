@@ -1,6 +1,6 @@
 <template>
-  <div class="root">
-    <div class="title" data-aos="fade-right" data-aos-duration="1500">
+  <div class="root center">
+    <div class="title-h2" data-aos="fade-right" data-aos-duration="1500">
       <h2>Наша Команда</h2>
     </div>
     <div class="persons">
@@ -45,19 +45,19 @@ const persons = ref([
 .root
   text-align: center
   background: $bg-command
-.title
-  text-align: center
+.title-h2
   padding-top: 94px
   margin-bottom: 50px
-  font-size: 36px
-  font-weight: 700
-  line-height: 42px
-  letter-spacing: .03em
+  @media (max-width: 768px)
+    padding-top: 60px
 
 .persons
   display: flex
   justify-content: center
   gap: 30px
+  @media (max-width: 768px)
+    flex-wrap: wrap
+    padding-bottom: 60px
 
 .row
   display: flex

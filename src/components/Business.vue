@@ -1,6 +1,6 @@
 <template>
   <div class="business">
-      <h1 class="title wow animate__animated animate__lightSpeedInLeft">{{ title }}</h1>
+      <h1 class="title animate__animated animate__lightSpeedInLeft">{{ title }}</h1>
       <div class="button animate__animated animate__lightSpeedInRight">
         <AppButton @action="show">Замовити послугу</AppButton>
     </div>
@@ -27,8 +27,6 @@ function show() {
 <style lang="sass" scoped>
 @import '../assets/style'
 .business
-  width: 100%
-  height: 100%
   background: url('../assets/img/Img.jpeg') center /cover no-repeat
   padding: 200px 0
   text-align: center

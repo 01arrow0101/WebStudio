@@ -1,14 +1,13 @@
 <template>
   <div class="list">
     <div class="item" v-for="logo in company" :key="logo">
-      <Svg :name="logo" class="current" />
+      <Svg :name="logo" class="current"></Svg>
     </div>
   </div>
 </template>
 
 <script setup>
 import Svg from "./Svg.vue";
-
 
 const company = ["1", "2", "3", "4", "5", "6"];
 
@@ -22,6 +21,8 @@ const company = ["1", "2", "3", "4", "5", "6"];
   justify-content: center
   align-items: center 
   gap: 30px
+  @media (max-width: 768px)
+  flex-wrap: wrap
 .item
   display: flex
   justify-content: center

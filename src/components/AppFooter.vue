@@ -32,6 +32,10 @@ import Subscribe from "./Subscribe.vue";
   margin: 0 auto
   display: flex
   gap: 70px
+  @media (max-width: 768px)
+    flex-wrap: wrap
+    justify-content: center
+    align-items: center
 .footer
   padding: 60px 0
   background-color: $bg-footer
@@ -49,5 +53,11 @@ import Subscribe from "./Subscribe.vue";
   color: $white
   margin-bottom: 20px
 .subscribe
-  padding-top: 20px  
+  padding-top: 20px
+  @media (max-width: 768px)
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    gap: 20px
 </style>

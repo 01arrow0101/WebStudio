@@ -25,10 +25,11 @@ const props = defineProps({
 .root
   border-radius: 0 0 4px 4px
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),0px 1px 1px 0px rgba(0, 0, 0, 0.14),0px 1px 3px 0px rgba(0, 0, 0, 0.12)
-  margin-bottom: 94px
 .person
   & img
     width: 270px
+    @media (max-width: 768px)
+      width: 354px
 .info
   padding: 30px 0
   background: $white

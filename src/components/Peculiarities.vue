@@ -1,12 +1,12 @@
 <template>
-  <div class="wrapper" data-aos="fade-up"
+  <div class="wrapper">
+    <div v-for="card in cards" :key="card.title" class="card"  data-aos="fade-up"
     data-aos-duration="1500"
     data-aos-anchor-placement="bottom-bottom">
-    <div v-for="card in cards" :key="card.title" class="card">
       <div class="img">
         <img :src="card.img" :alt="card.alt" />
       </div>
-      <div class="title">{{ card.title }}</div>
+      <div class="title-h3">{{ card.title }}</div>
       <div class="text">{{ card.text }}</div>
     </div>
   </div>
@@ -49,8 +49,13 @@ const cards = ref([
   display: flex
   justify-content: center
   gap: 30px
+  padding: 0 16px
+  @media screen and (max-width: 768px)
+    flex-wrap: wrap
 .card
   max-width: 270px
+  @media (max-width: 768px)
+    max-width: 354px
 .img
   display: flex
   justify-content: center
@@ -63,17 +68,10 @@ const cards = ref([
   & img
     width: 70px
     height: 70px
-.title
+.title-h3
   text-transform: uppercase
-  font-size: .875rem
-  font-weight: 700
-  line-height: 1rem
-  letter-spacing: .03em
   margin-bottom: 10px
 
 .text
-  font-size: 14px
-  line-height: 24px
-  letter-spacing: .03em
   color: $grey
 </style>

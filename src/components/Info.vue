@@ -1,7 +1,7 @@
 <template>
   <div class="root">
     <div class="info">
-      <div class="title" data-aos="fade-left" data-aos-duration="1500">
+      <div class="title-h2" data-aos="fade-left" data-aos-duration="1500">
         <h2>Чим ми займаємося</h2>
       </div>
       <div class="img-row" data-aos="fade-up"
@@ -38,6 +38,9 @@ const images = ref([
   display: flex
   justify-content: center
   margin-bottom: 94px
+  @media (max-width: 768px)
+    display: none
+
 .title
   text-align: center
   margin-bottom: 50px
@@ -49,6 +52,8 @@ const images = ref([
 .img-row
   display: flex
   gap: 30px
+  @media (max-width: 768px)
+    flex-wrap: wrap
 .img
   width: 370px
 </style>

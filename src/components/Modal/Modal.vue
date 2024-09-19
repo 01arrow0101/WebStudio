@@ -1,4 +1,5 @@
 <template>
+
     <div v-if="isShowModal" class="wrapper">
         <div class="modal animate__animated animate__backInDown">
           <div class="close">
@@ -76,6 +77,7 @@ const fields = ref([
 const commit = ref('');
 
 function submitForm() {
+  closeModal()
   // const isValid = fields.value.every(field => field.value.value.length > 0) && checked.value;
   // if (isValid) {
   //   console.log(checked.value, ...fields.value.map(field => field.value.value));
@@ -91,15 +93,6 @@ function closeModal() {
 
 <style lang="sass" scoped>
 @import '@/assets/style.sass'
-
-.overlay-enter-from,
-.overlay-leave-to
-  opacity: 0
-
-.overlay-enter-active,
-.overlay-leave-active
-  transition: all 1s
-
 
 .svg-icon
   position: absolute
@@ -122,9 +115,12 @@ function closeModal() {
   padding-top: 200px
   background: rgba(0,0,0,70%)
   z-index: 9999
+  height: 100%
+  overflow: hidden
 
 .modal
-  position: relative
+  position: fixed
+  top: 80px
   max-width: 528px
   max-height: 580px
   width: 100%
@@ -132,6 +128,8 @@ function closeModal() {
   border-radius: 4px
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),0px 1px 1px 0px rgba(0, 0, 0, 0.14),0px 1px 3px 0px rgba(0, 0, 0, 0.12)
   background: $white
+  @media (max-width: 768px)
+    max-width: 450px
 
 .close
   position: absolute
@@ -152,7 +150,10 @@ function closeModal() {
   font-weight: 700
   line-height: 23px
   letter-spacing: 3%
-  margin-bottom: 12px  
+  margin-bottom: 12px
+  @media (max-width: 768px)
+    line-height: 30px 
+    text-align: center
 
 .col
   position: relative

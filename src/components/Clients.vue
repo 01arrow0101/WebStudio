@@ -3,7 +3,7 @@
     data-aos="fade-up"
     data-aos-duration="1500"
     data-aos-anchor-placement="bottom-bottom">
-    <div class="title">
+    <div class="title-h2">
       <h2>Постійні клієнти</h2>
     </div>
     <div class="brands">
@@ -24,13 +24,11 @@ import BrandCompanyLogo from './BrandCompanyLogo.vue'
   width: 100%
   margin: 0 auto
   padding: 94px 0
+  @media (max-width: 768px)
+    padding: 60px 0
 
-.title
+.title-h2
   text-align: center
-  font-size: 36px
-  font-weight: 700
-  line-height: 42px
-  letter-spacing: .03em
   margin-bottom: 50px
 
 </style>

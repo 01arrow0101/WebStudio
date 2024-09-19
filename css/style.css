@@ -157,9 +157,13 @@ a {
 
 body {
   font-family: Roboto;
+  font-size: 0.875rem;
+  font-weight: 400;
   color: #212121;
 }
 
 #app {
   position: relative;
+  max-width: 100%;
+  overflow: hidden;
 }/*# sourceMappingURL=style.css.map */

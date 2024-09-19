@@ -28,6 +28,10 @@
       @close="isActiveMenu = false"
       :items="ROUTER_PATH"
       :show-menu="isActiveMenu"
+      :tel="'+38 096 111 11 11'"
+      :email="'info@devstudio.com'"
+      :showMenu="isActiveMenu"
+      @action="isActiveMenu = false"
     />
   </header>
 </template>
@@ -76,18 +80,17 @@ onMounted(() => {
   @media (max-width: 767px)
     justify-content: space-between
     padding: 20px 16px
-
-.navbar
   @media (max-width: 480px)
-    display: none
+    display: block
 .btn-burger
-  display: none
-  position: fixed
-  right: 0
-  top: 0
+  display: block
+  position: absolute
+  top: 20px
+  right: 50px
   width: 21px
   height: 21px
   border: 1px solid $primary
+  cursor: pointer
   @media (max-width: 480px)
     display: block
 .btn-line
@@ -114,6 +117,7 @@ onMounted(() => {
     background: #000
     top: -4px
     left: 0
+
 .menu-list
   display: flex
   justify-content: center
