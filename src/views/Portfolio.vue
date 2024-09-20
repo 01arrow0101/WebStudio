@@ -8,6 +8,7 @@
           :key="i"
           :btn="name"
           @action="filterProduct"
+          :is-active="filterActive"
         />
         <button class="btn" @click="sort">Сортування А-Я</button>
       </div>
@@ -163,9 +164,19 @@ function sort() {
   align-items: center
   gap: 8px
   margin-bottom: 50px
+  @media (max-width: 768px)
+    flex-wrap: wrap
+    justify-content: start
 .grid
   display: grid
   grid-template-columns: repeat(3, 1fr)
   grid-template-rows: repeat(3, 1fr)
   gap: 1.875rem
+  justify-items: center
+  @media (max-width: 768px)
+    grid-template-columns: repeat(2, 1fr)
+    grid-template-rows: repeat(2, 1fr)
+  @media (max-width: 480px)
+    grid-template-columns: repeat(1, 1fr)
+    grid-template-rows: repeat(1, 1fr)
 </style>

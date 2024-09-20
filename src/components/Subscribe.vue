@@ -1,11 +1,11 @@
 <template>
-<div class="title">Підпишіться на розсилку</div>
+<div class="title-h3">Підпишіться на розсилку</div>
 <label for="email">
   <input 
   v-model="value"
   type="text" placeholder="E-mail">
-  <button @click="subscribe" class="btn primary">Підписатися</button>
 </label>
+<button @click="subscribe" class="btn primary">Підписатися</button>
 </template>
 
 <script setup>
@@ -21,14 +21,13 @@ function subscribe(){
 
 <style lang="sass" scoped>
 @import '@/assets/style.sass'
-.title
-  font-size: 14px
-  font-weight: 700
-  line-height: 16px
-  letter-spacing: .03em
+
+.title-h3
   color: $white
   text-transform: uppercase
   margin-bottom: 20px
+  @media (max-width: 768px)
+    margin-bottom: 0
 
 input
   padding: 16px
@@ -45,13 +44,14 @@ input
   padding: 16px
   margin-right: 12px
   &:focus
-    outline-color: $white
+    outline-color: $primary
   &::placeholder
     padding: 16px
     font-size: 16px
     line-height: 20px
     letter-spacing: .03em
-
+    @media (max-width: 768px)
+      margin-right: 0
 .btn
   width: 200px
   position: relative
@@ -77,5 +77,8 @@ input
   &:hover
     background: darken($primary, 15%)
     cursor: pointer    
-    
+
+.email
+  display: flex
+  flex-direction: column  
 </style>

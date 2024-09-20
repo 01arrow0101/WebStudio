@@ -3,12 +3,12 @@
     <div class="container">
       <div class="address">
         <div class="margin">
-          <AppLogo />
+          <AppLogo className="color"/>
         </div>
         <Address />
       </div>
       <div class="social">
-        <div class="title">приєднуйтесь</div>
+        <div class="title-h3">приєднуйтесь</div>
         <SocialIcon />
       </div>
       <div class="subscribe">
@@ -32,6 +32,11 @@ import Subscribe from "./Subscribe.vue";
   margin: 0 auto
   display: flex
   gap: 70px
+  @media (max-width: 768px)
+    flex-wrap: wrap
+    justify-content: center
+    align-items: center
+    text-align: center
 .footer
   padding: 60px 0
   background-color: $bg-footer
@@ -40,14 +45,16 @@ import Subscribe from "./Subscribe.vue";
   margin-bottom: 20px
 .social
   padding-top: 12px
-.title
+.title-h3
   text-transform: uppercase
-  font-size: 14px
-  font-weight: 700
-  line-height: 16px
-  letter-spacing: 0.03em
   color: $white
   margin-bottom: 20px
 .subscribe
-  padding-top: 20px  
+  padding-top: 20px
+  @media (max-width: 768px)
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    gap: 20px
 </style>
