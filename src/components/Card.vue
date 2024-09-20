@@ -1,5 +1,5 @@
 <template>
-  <div class="card" >
+  <div class="card" data-aos="flip-left" data-aos-duration="1500">
     <div class="img">
       <div class="description">{{card.description}}</div>
       <img :src="card.src" :alt="card.name" />
@@ -24,7 +24,8 @@ const card = ref(props.card)
 <style lang="sass" scoped>
 @import '/src/assets/style.sass'
 .card
-  width: 370px
+  max-width: 370px
+  // width: 100%
   border: 1px solid rgb(238, 238, 238)
   background: $white
   &:hover
@@ -40,6 +41,8 @@ const card = ref(props.card)
 .img
   position: relative
   margin-bottom: 20px
+  & img
+    width: 100%
 .description
   visibility: hidden
   opacity: 0
@@ -53,7 +56,7 @@ const card = ref(props.card)
   top: 0
   left: 0
 
-  width: 370px
+  width: 100%
   height: 100%
   background: rgba(33, 150, 243, 0.9)
   color: $white

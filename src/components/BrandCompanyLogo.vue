@@ -1,6 +1,10 @@
 <template>
   <div class="list">
-    <div class="item" v-for="logo in company" :key="logo">
+    <div
+    data-aos="fade-up"
+    data-aos-duration="1500"
+    data-aos-anchor-placement="bottom-bottom"
+    class="item" v-for="logo in company" :key="logo">
       <Svg :name="logo" class="current"></Svg>
     </div>
   </div>

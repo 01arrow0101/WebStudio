@@ -4,11 +4,13 @@
       <div class="title-h2" data-aos="fade-left" data-aos-duration="1500">
         <h2>Чим ми займаємося</h2>
       </div>
-      <div class="img-row" data-aos="fade-up"
-    data-aos-duration="2000"
-    data-aos-anchor-placement="bottom-bottom">
+      <div class="img-row" >
         <div v-for="img in images" :key="img.alt" class="img">
-          <img :src="img.src" :alt="img.alt" />
+          <img
+          data-aos="fade-up"
+        data-aos-duration="2000"
+        data-aos-anchor-placement="bottom-bottom"
+          :src="img.src" :alt="img.alt" />
         </div>
       </div>
     </div>
@@ -41,14 +43,9 @@ const images = ref([
   @media (max-width: 768px)
     display: none
 
-.title
+.title-h2
   text-align: center
   margin-bottom: 50px
-
-  font-size: 36px
-  font-weight: 700
-  line-height: 42px
-  letter-spacing: .03em
 .img-row
   display: flex
   gap: 30px

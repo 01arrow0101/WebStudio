@@ -1,11 +1,13 @@
 <template>
   <header>
-    <div v-if="!isActiveMenu" class="header">
+    <div class="header">
       <AppLogo />
       <div @click="isActiveMenu = true" class="btn-burger">
         <div class="btn-line"></div>
       </div>
-      <nav class="navbar">
+      <nav
+      v-if="!isActiveMenu"
+      class="navbar">
         <div class="menu">
           <ul class="menu-list">
             <li v-for="(item, key) in ROUTER_PATH" :key="key" :class="{ 'active': activeKey === key }" class="menu-list_item">
@@ -22,7 +24,6 @@
           <a href="tel:+380981111111">+38 096 111 11 11</a>
         </div>
       </div>
-    </div>
     <MenuBurger
       v-if="isActiveMenu"
       @close="isActiveMenu = false"
@@ -33,6 +34,7 @@
       :showMenu="isActiveMenu"
       @action="isActiveMenu = false"
     />
+</div>
   </header>
 </template>
 
@@ -70,7 +72,6 @@ onMounted(() => {
 
 .header
   position: relative
-  width: 100%
   display: flex
   justify-content: space-evenly
   align-items: center
@@ -79,18 +80,17 @@ onMounted(() => {
   padding: 24px 0
   @media (max-width: 767px)
     justify-content: space-between
-    padding: 20px 16px
-  @media (max-width: 480px)
-    display: block
+    padding: 20px 16px    
 .btn-burger
-  display: block
+  display: none
   position: absolute
   top: 20px
-  right: 50px
+  right: 16px
   width: 21px
   height: 21px
-  border: 1px solid $primary
   cursor: pointer
+  &:hover
+    
   @media (max-width: 480px)
     display: block
 .btn-line
@@ -117,7 +117,9 @@ onMounted(() => {
     background: #000
     top: -4px
     left: 0
-
+.navbar
+  @media (max-width: 480px)
+    display: none
 .menu-list
   display: flex
   justify-content: center

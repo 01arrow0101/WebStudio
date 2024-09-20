@@ -62,7 +62,7 @@ label
   letter-spacing: 1%
 
 .input
-  width: 100%
+  width: 360px
   height: 40px
   margin-bottom: 10px
   border: 1px solid $border-color

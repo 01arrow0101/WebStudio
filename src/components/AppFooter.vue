@@ -8,7 +8,7 @@
         <Address />
       </div>
       <div class="social">
-        <div class="title">приєднуйтесь</div>
+        <div class="title-h3">приєднуйтесь</div>
         <SocialIcon />
       </div>
       <div class="subscribe">
@@ -36,6 +36,7 @@ import Subscribe from "./Subscribe.vue";
     flex-wrap: wrap
     justify-content: center
     align-items: center
+    text-align: center
 .footer
   padding: 60px 0
   background-color: $bg-footer
@@ -44,12 +45,8 @@ import Subscribe from "./Subscribe.vue";
   margin-bottom: 20px
 .social
   padding-top: 12px
-.title
+.title-h3
   text-transform: uppercase
-  font-size: 14px
-  font-weight: 700
-  line-height: 16px
-  letter-spacing: 0.03em
   color: $white
   margin-bottom: 20px
 .subscribe

@@ -2,7 +2,7 @@
   <div 
   @click="$emit('action')"
   @click.stop
-  class="menu-burger animate__animated animate__backInLeft">
+  class="menu-burger animate__animated animate__fadeInLeft">
     <div class="close">
       <button @click="$emit('action')">X</button>
     </div>
@@ -66,10 +66,12 @@ const tel = ref(props.tel);
 
 .menu-burger
   position: fixed
+  top: 0
+  left: 0
   padding: 48px 0 48px 40px
   width: 100%
   height: 100%
-  background: lighten($primary, 15%)
+  background: darken($white, 10% )
   z-index: 999
   display: flex
   flex-direction: column
@@ -105,7 +107,7 @@ const tel = ref(props.tel);
     color: $black
     &:hover,
     &:active
-      color: $white
+      color: $primary
 
 .contacts
   display: inline-flex
@@ -119,11 +121,12 @@ const tel = ref(props.tel);
 .tel
   font-size: 2.125rem
   line-height: 40px
+  color: darken($primary, 20%)
 .email,
 .tel
   &:hover,
   &:active
-    color: $white
+    color: $primary
 
 .social-list
   display: flex
@@ -132,10 +135,14 @@ const tel = ref(props.tel);
   font-weight: 500
   line-height: 22px
   letter-spacing: .02em
+  color: darken($primary, 20%)
+  @media (max-width: 480px)
+    flex-wrap: wrap
+    justify-content: center
   &_item
     position: relative
     &:hover
-      color: $white
+      color: $primary
     &:not(:last-child)
       &::after
         content: ''

@@ -55,6 +55,7 @@ const persons = ref([
   display: flex
   justify-content: center
   gap: 30px
+  padding-bottom: 94px
   @media (max-width: 768px)
     flex-wrap: wrap
     padding-bottom: 60px
