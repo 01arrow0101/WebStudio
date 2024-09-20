@@ -1,5 +1,5 @@
 <template>
-  <button @click="$emit('action', nameBtn.name)" class="btn">{{ nameBtn.name }}</button>
+  <button @click="$emit('action', nameBtn.name)">{{ nameBtn.name }}</button>
 </template>
 
 <script setup>
@@ -10,8 +10,10 @@ const props = defineProps({
     type: Object,
     required: true,
   },
+  isActive: Boolean
 });
 const nameBtn = ref(props.btn);
+const isActive = ref(props.isActive)
 
 const emit = defineEmits(["action"]);
 </script>
@@ -31,4 +33,5 @@ const emit = defineEmits(["action"]);
     background: $primary
     color: $white
     cursor: pointer
+
 </style>

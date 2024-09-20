@@ -2,7 +2,7 @@
   <div class="icon">
     <div class="icon-list row">
       <div v-for="icon in icons" :key="icon" class="icon-list_item">
-        <Svg :name="icon" class="current" />
+        <Svg :name="icon" class="current"></Svg>
       </div>
     </div>
   </div>
