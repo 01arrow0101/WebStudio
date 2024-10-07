@@ -118,20 +118,6 @@ function closeModal() {
 
 <style lang="sass" scoped>
 @import '@/assets/style.sass'
-
-.svg-icon
-  position: absolute
-  top: 38px
-  left: 16px
-  width: 18px
-  height: 18px
-  transform: translateY(-50%)
-  transition: color 0.3s ease  
-  color: $grey
-
-.col:focus-within .svg-icon
-  color: $primary  
-
 .wrapper
   position: absolute
   inset: 0
@@ -140,9 +126,6 @@ function closeModal() {
   padding-top: 200px
   background: rgba(0,0,0,70%)
   z-index: 9999
-  height: 100%
-  overflow: hidden
-
 .modal
   position: fixed
   top: 80px
@@ -150,7 +133,9 @@ function closeModal() {
   max-height: 580px
   width: 100%
   padding: 40px
+
   border-radius: 4px
+
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),0px 1px 1px 0px rgba(0, 0, 0, 0.14),0px 1px 3px 0px rgba(0, 0, 0, 0.12)
   background: $white
   @media (max-width: 768px)
@@ -181,7 +166,6 @@ function closeModal() {
     text-align: center
 
 .col
-  position: relative
   display: flex
   flex-direction: column
   gap: 4px
