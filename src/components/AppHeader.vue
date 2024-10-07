@@ -89,8 +89,6 @@ onMounted(() => {
   width: 21px
   height: 21px
   cursor: pointer
-  &:hover
-    
   @media (max-width: 480px)
     display: block
 .btn-line
@@ -116,7 +114,7 @@ onMounted(() => {
     height: 1px
     background: #000
     top: -4px
-    left: 0
+    left: 0  
 .navbar
   @media (max-width: 480px)
     display: none
@@ -144,8 +142,7 @@ onMounted(() => {
         height: 4px
         border-radius: 2px
         background: $primary
-    &:hover,
-    &:active
+    &:hover
       color: $primary
       transition: all .4s ease
 

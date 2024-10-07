@@ -49,10 +49,6 @@
   flex-direction: column;
 }
 
-.active {
-  background: #2196F3;
-}
-
 .nav-link {
   font-size: 0.875rem;
   font-weight: 500;

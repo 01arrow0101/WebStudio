@@ -8,7 +8,8 @@
       :placeholder="placeholder"
       :name="label"
       class="input"
-      :class="className"
+      :class="hasError ? 'error' : className"
+      @input="emit('update:modelValue', inputValue)"
     />
   </label>
 </template>
@@ -37,7 +38,8 @@ const props = defineProps({
   className:{
     type: String,
     required: false
-  }
+  },
+  hasError: Boolean
 });
 
 const emit = defineEmits(['update:modelValue']);
@@ -52,6 +54,9 @@ watch(inputValue, (newValue) => {
 <style lang="sass" scoped>
 $primary: #2196F3
 $border-color: rgba(33, 33, 33, 0.2)
+
+
+
 label
   display: flex
   flex-direction: column
@@ -62,7 +67,7 @@ label
   letter-spacing: 1%
 
 .input
-  width: 360px
+  width: 100%
   height: 40px
   margin-bottom: 10px
   border: 1px solid $border-color
@@ -70,4 +75,7 @@ label
   padding-left: 46px
   &:focus
     outline-color: $primary
+
+.error
+  border: 1px solid #f30    
 </style>

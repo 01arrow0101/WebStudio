@@ -1,34 +1,40 @@
 <template>
-
-    <div v-if="isShowModal" class="wrapper">
-        <div class="modal animate__animated animate__backInDown">
-          <div class="close">
-            <button @click="closeModal">X</button>
-          </div>
-          <div class="title">Залиште свої дані, ми вам передзвонимо</div>
-          <form @submit.prevent="submitForm">
-            <div 
-              v-for="field in fields"
-              :key="field.label"
-              :id="field.label"
-              class="name col">
-              <Input :title="field.title" v-model="field.value" :label="field.label" :type="field.type"/>
-              <Svg :className="field.className" :name="field.icon"></Svg>
-            </div>
-            <div class="commit col">
-              Коментар
-              <textarea v-model="commit" name="commit" id="commit" placeholder="Введите текст"></textarea>
-            </div>
-            <div class="license">
-              <input type="checkbox" v-model="checked">
-              Погоджуюся з розсилкою та приймаю <a class="license-link" href="#">Умови договору</a>
-            </div>
-            <div class="button">
-              <AppButton type="btn">Відправити</AppButton>
-            </div>
-          </form>
-        </div>
+  <div v-if="isShowModal" class="wrapper">
+    <div class="modal animate__animated animate__backInDown">
+      <div class="close">
+        <button @click="closeModal">X</button>
       </div>
+      <div class="title">Залиште свої дані, ми вам передзвонимо</div>
+      <form @submit.prevent="submitForm">
+        <div 
+          v-for="field in fields"
+          :key="field.label"
+          :id="field.label"
+          class="name col">
+          <Input 
+            :title="field.title" 
+            v-model="field.value" 
+            :label="field.label" 
+            :type="field.type" 
+            :has-error="field.hasError"
+            @update:modelValue="validateField(field)"
+          />
+          <Svg :className="field.className" :name="field.icon"></Svg>
+        </div>
+        <div class="commit col">
+          Коментар
+          <textarea v-model="commit" name="commit" id="commit" placeholder="Введите текст"></textarea>
+        </div>
+        <div class="license">
+          <input type="checkbox" v-model="checked">
+          Погоджуюся з розсилкою та приймаю <a class="license-link" href="#">Умови договору</a>
+        </div>
+        <div class="button">
+          <AppButton type="btn">Відправити</AppButton>
+        </div>
+      </form>
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -54,7 +60,8 @@ const fields = ref([
     label: 'name',
     type: 'text',
     icon: 'user',
-    className: 'svg-icon'
+    className: 'svg-icon',
+    hasError: ref(false)
   },
   {
     title: "Телефон",
@@ -62,7 +69,8 @@ const fields = ref([
     label: 'tel',
     type: 'tel',
     icon: 'tel',
-    className: 'svg-icon'
+    className: 'svg-icon',
+    hasError: ref(false)
   },
   {
     title: "Пошта",
@@ -70,20 +78,37 @@ const fields = ref([
     label: 'mail',
     type: 'text',
     icon: 'email',
-    className: 'svg-icon'
+    className: 'svg-icon',
+    hasError: ref(false)
   },
 ]);
 
 const commit = ref('');
 
+function validateField(field) {
+  field.hasError = field.value.length === 0;
+}
+
 function submitForm() {
-  closeModal()
-  // const isValid = fields.value.every(field => field.value.value.length > 0) && checked.value;
-  // if (isValid) {
-  //   console.log(checked.value, ...fields.value.map(field => field.value.value));
-  // } else {
-  //   console.log('Ошибка');
-  // }
+  const isValid = fields.value.every(field => {
+    validateField(field);
+    return !field.hasError;
+  }) && checked.value;
+
+  if (isValid) {
+    closeModal();
+    console.log(checked.value, ...fields.value.map(field => field.value));
+  } else {
+    fields.value.forEach(field => {
+      if (field.value.length === 0) {
+        field.hasError = true;
+      }
+    });
+    if (!checked.value) {
+      console.log('Вы не согласились с лицензией');
+    }
+    console.log('Ошибка');
+  }
 }
 
 function closeModal() {

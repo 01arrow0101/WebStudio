@@ -1,5 +1,10 @@
 <template>
-  <button @click="$emit('action', nameBtn.name)">{{ nameBtn.name }}</button>
+  <button 
+    class="btn" 
+    :class="{ active: isActive }" 
+    @click="$emit('action', btn.name)">
+    {{ btn.name }}
+  </button>
 </template>
 
 <script setup>
@@ -12,14 +17,13 @@ const props = defineProps({
   },
   isActive: Boolean
 });
-const nameBtn = ref(props.btn);
-const isActive = ref(props.isActive)
 
 const emit = defineEmits(["action"]);
 </script>
 
 <style lang="sass" scoped>
 @import '/src/assets/style.sass'
+
 .btn
   border-radius: 4px
   background: rgb(245, 244, 250)
@@ -34,4 +38,8 @@ const emit = defineEmits(["action"]);
     color: $white
     cursor: pointer
 
+.btn.active
+  background: $primary
+  color: $white
+  // Добавьте любые другие стили для активного состояния
 </style>

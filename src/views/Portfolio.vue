@@ -8,7 +8,7 @@
           :key="i"
           :btn="name"
           @action="filterProduct"
-          :is-active="filterActive"
+          :is-active="name.name === activeCategory"
         />
         <button class="btn" @click="sort">Сортування А-Я</button>
       </div>
@@ -99,6 +99,7 @@ const cards = ref([
   },
 ]);
 const filterCard = ref([]);
+const activeCategory = ref("Усі");
 const btns = ref([
   {
     name: "Усі",
@@ -124,6 +125,8 @@ const btns = ref([
 
 function filterProduct(category) {
   filterActive.value = true;
+  activeCategory.value = category;
+  
   if (category === "Усі") {
     filterCard.value = cards.value;
   } else {

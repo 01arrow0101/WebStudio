@@ -26,7 +26,7 @@ const company = ["1", "2", "3", "4", "5", "6"];
   align-items: center 
   gap: 30px
   @media (max-width: 768px)
-  flex-wrap: wrap
+    flex-wrap: wrap
 .item
   display: flex
   justify-content: center
