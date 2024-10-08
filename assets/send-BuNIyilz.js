@@ -1,0 +1,1 @@
+import{o as e,c as t,a as o}from"./index-BRa350B2.js";const n={xmlns:"http://www.w3.org/2000/svg",width:"24",height:"24",fill:"none"},s=o("path",{fill:"#FFF",d:"M24 0 0 13.5l7.66 2.84L19.5 5.25l-9 12.13v.01-.01V24l4.3-5.02L20.25 21z"},null,-1),l=[s];function c(r,a){return e(),t("svg",n,[...l])}const h={render:c};export{h as default,c as render};
