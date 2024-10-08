@@ -8,7 +8,7 @@
       :placeholder="placeholder"
       :name="label"
       class="input"
-      :class="hasError ? 'error' : className"
+      :class="hasError ? 'error' : ''"
       @input="emit('update:modelValue', inputValue)"
     />
   </label>
@@ -25,29 +25,29 @@ const props = defineProps({
   },
   type: {
     type: String,
-    default: 'text',
+    default: "text",
   },
   placeholder: {
     type: String,
-    default: '',
+    default: "",
   },
   modelValue: {
     type: String,
-    default: '',
+    default: "",
   },
-  className:{
+  className: {
     type: String,
-    required: false
+    required: false,
   },
-  hasError: Boolean
+  hasError: Boolean,
 });
 
-const emit = defineEmits(['update:modelValue']);
+const emit = defineEmits(["update:modelValue"]);
 
 const inputValue = ref(props.modelValue);
 
 watch(inputValue, (newValue) => {
-  emit('update:modelValue', newValue);
+  emit("update:modelValue", newValue);
 });
 </script>
 
@@ -58,6 +58,7 @@ $border-color: rgba(33, 33, 33, 0.2)
 
 
 label
+  position: relative
   display: flex
   flex-direction: column
   gap: 4px
@@ -77,5 +78,5 @@ label
     outline-color: $primary
 
 .error
-  border: 1px solid #f30    
+  border: 1px solid #f30
 </style>

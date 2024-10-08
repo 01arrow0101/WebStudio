@@ -1,8 +1,9 @@
 <template>
-  <button 
-    class="btn" 
-    :class="{ active: isActive }" 
-    @click="$emit('action', btn.name)">
+  <button
+    class="btn"
+    :class="{ active: isActive }"
+    @click="$emit('action', btn.name)"
+  >
     {{ btn.name }}
   </button>
 </template>
@@ -15,7 +16,7 @@ const props = defineProps({
     type: Object,
     required: true,
   },
-  isActive: Boolean
+  isActive: Boolean,
 });
 
 const emit = defineEmits(["action"]);

@@ -1,20 +1,23 @@
 <template>
-  <div class="root" data-aos="fade-up"
+  <div
+    class="root"
+    data-aos="fade-up"
     data-aos-duration="1500"
-    data-aos-anchor-placement="bottom-bottom">
-    <div class="person" >
+    data-aos-anchor-placement="bottom-bottom"
+  >
+    <div class="person">
       <img :src="person.src" :alt="person.name" />
     </div>
     <div class="info">
       <div class="name">{{ person.name }}</div>
       <div class="position">{{ person.position }}</div>
-    <SocialIcon />
+      <SocialIcon />
     </div>
   </div>
 </template>
 
 <script setup>
-import SocialIcon from './SocialIcon.vue'
+import SocialIcon from "./SocialIcon.vue";
 const props = defineProps({
   person: Object,
 });

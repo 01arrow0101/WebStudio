@@ -1,16 +1,16 @@
 <template>
   <button :class="type" class="btn" @click="$emit('action')">
-  <slot></slot>
+    <slot></slot>
   </button>
 </template>
 
 <script setup>
 const props = defineProps({
-  type:{
+  type: {
     type: String,
     required: false,
-  }
-})
+  },
+});
 </script>
 
 <style lang="sass" scoped>

@@ -1,15 +1,13 @@
 <template>
-<div class="wrapper">
-  <div class="title-h2">
-    <h2>Ошибка</h2>
+  <div class="wrapper">
+    <div class="title-h2">
+      <h2>Ошибка</h2>
+    </div>
+    <div class="title-h3">Заповніть усі поля</div>
   </div>
-  <div class="title-h3">Заповніть усі поля </div>
-</div>
 </template>
 
-<script setup>
-
-</script>
+<script setup></script>
 
 <style lang="sass" scoped>
 @import '@/assets/style'

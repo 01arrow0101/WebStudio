@@ -1,24 +1,24 @@
 <template>
   <div class="card" data-aos="flip-left" data-aos-duration="1500">
     <div class="img">
-      <div class="description">{{card.description}}</div>
+      <div class="description">{{ card.description }}</div>
       <img :src="card.src" :alt="card.name" />
     </div>
-    <div class="name">{{card.name}}</div>
-    <div class="category">{{card.category}}</div>
+    <div class="name">{{ card.name }}</div>
+    <div class="category">{{ card.category }}</div>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue"
+import { ref } from "vue";
 
 const props = defineProps({
-  card:{
+  card: {
     type: Object,
-    required: true
-  }
-})
-const card = ref(props.card)
+    required: true,
+  },
+});
+const card = ref(props.card);
 </script>
 
 <style lang="sass" scoped>
@@ -36,8 +36,8 @@ const card = ref(props.card)
       visibility: visible
       opacity: 1
       transition: opacity .5s ease
-      
-          
+
+
 .img
   position: relative
   margin-bottom: 20px
@@ -79,7 +79,7 @@ const card = ref(props.card)
   font-weight: 400
   line-height: 30px
   letter-spacing: .03em
-  color: $grey  
+  color: $grey
   padding-left: 24px
   margin-bottom: 20px
 </style>

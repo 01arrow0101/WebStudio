@@ -118,6 +118,7 @@ function closeModal() {
 
 <style lang="sass" scoped>
 @import '@/assets/style.sass'
+
 .wrapper
   position: absolute
   inset: 0
@@ -130,7 +131,6 @@ function closeModal() {
   position: fixed
   top: 80px
   max-width: 528px
-  max-height: 580px
   width: 100%
   padding: 40px
 
@@ -174,7 +174,8 @@ function closeModal() {
   line-height: 14px
   letter-spacing: 1%
   color: $grey
-
+.name
+  position: relative
 .commit
   margin-bottom: 20px
   & textarea
@@ -201,5 +202,16 @@ function closeModal() {
 .button
   text-align: center
   &.btn
-    padding: 10px 52px    
+    padding: 10px 52px
+.svg-icon
+  position: absolute
+  top: 38px
+  left: 16px
+  width: 18px
+  height: 18px
+  transform: translateY(-50%)
+  transition: color 0.3s ease  
+  color: $grey
+.col:focus-within .svg-icon
+  color: $primary
 </style>

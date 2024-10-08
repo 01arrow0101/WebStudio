@@ -1,18 +1,20 @@
 <script setup>
-import { defineAsyncComponent } from 'vue'
+import { defineAsyncComponent } from "vue";
 const props = defineProps({
   name: {
     type: String,
-    required: true
+    required: true,
   },
   className: {
     type: String,
-    required: false
-  }
-})
+    required: false,
+  },
+});
 
-const icon = defineAsyncComponent(() => import(`../assets/icons/${props.name}.svg`))
+const icon = defineAsyncComponent(
+  () => import(`../assets/icons/${props.name}.svg`),
+);
 </script>
 <template>
-<component :class="className" :is="icon"/>
+  <component :class="className" :is="icon" />
 </template>

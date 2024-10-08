@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="title-h2"  data-aos="fade-up">
+    <div class="title-h2" data-aos="fade-up">
       <h2>Постійні клієнти</h2>
     </div>
     <div class="brands">
@@ -10,8 +10,7 @@
 </template>
 
 <script setup>
-import BrandCompanyLogo from './BrandCompanyLogo.vue'
-
+import BrandCompanyLogo from "./BrandCompanyLogo.vue";
 </script>
 
 <style lang="sass" scoped>
@@ -27,5 +26,4 @@ import BrandCompanyLogo from './BrandCompanyLogo.vue'
 .title-h2
   text-align: center
   margin-bottom: 50px
-
 </style>

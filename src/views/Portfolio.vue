@@ -35,49 +35,49 @@ import Card from "../components/Card.vue";
 const filterActive = ref(false);
 const cards = ref([
   {
-    src: "/src/assets/img/portfolio/1.jpeg",
+    src: new URL('/src/assets/img/portfolio/1.jpeg', import.meta.url).href,
     name: "Технокряк",
     category: "Веб-сайти",
     description:
       "Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну особу.",
   },
   {
-    src: "/src/assets/img/portfolio/2.jpeg",
+    src: new URL('/src/assets/img/portfolio/2.jpeg', import.meta.url).href,
     name: "Постер New Orlean vs Golden Star",
     category: "Дизайн",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem sint cum molestias accusamus eligendi ipsam doloremque perferendis ullam quam corrupti.",
   },
   {
-    src: "/src/assets/img/portfolio/3.jpeg",
+    src: new URL('/src/assets/img/portfolio/3.jpeg', import.meta.url).href,
     name: "Ресторан Seafood",
     category: "Додатки",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem sint cum molestias accusamus eligendi ipsam doloremque perferendis ullam quam corrupti.",
   },
   {
-    src: "/src/assets/img/portfolio/4.jpeg",
+    src: new URL('/src/assets/img/portfolio/4.jpeg', import.meta.url).href,
     name: "Проєкт Prime",
     category: "Маркетинг",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem sint cum molestias accusamus eligendi ipsam doloremque perferendis ullam quam corrupti.",
   },
   {
-    src: "/src/assets/img/portfolio/5.jpeg",
+    src: new URL('/src/assets/img/portfolio/5.jpeg', import.meta.url).href,
     name: "Проєкт Boxes",
     category: "Додатки",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem sint cum molestias accusamus eligendi ipsam doloremque perferendis ullam quam corrupti.",
   },
   {
-    src: "/src/assets/img/portfolio/6.jpeg",
+    src: new URL('/src/assets/img/portfolio/6.jpeg', import.meta.url).href,
     name: "Inspiration has no Borders",
     category: "Веб-сайти",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem sint cum molestias accusamus eligendi ipsam doloremque perferendis ullam quam corrupti.",
   },
   {
-    src: "/src/assets/img/portfolio/7.jpeg",
+    src: new URL('/src/assets/img/portfolio/7.jpeg', import.meta.url).href,
     name: "Видання Limited Edition",
     category: "Дизайн",
     description:
@@ -126,7 +126,7 @@ const btns = ref([
 function filterProduct(category) {
   filterActive.value = true;
   activeCategory.value = category;
-  
+
   if (category === "Усі") {
     filterCard.value = cards.value;
   } else {
@@ -136,7 +136,7 @@ function filterProduct(category) {
 
 function sort() {
   filterCard.value = cards.value.sort((a, b) =>
-    a.category.localeCompare(b.category)
+    a.category.localeCompare(b.category),
   );
 }
 </script>

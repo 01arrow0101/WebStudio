@@ -1,27 +1,28 @@
 <template>
   <div class="business">
-      <h1 class="title animate__animated animate__lightSpeedInLeft">{{ title }}</h1>
-      <div class="button animate__animated animate__lightSpeedInRight">
-        <AppButton @action="show">Замовити послугу</AppButton>
+    <h1 class="title animate__animated animate__lightSpeedInLeft">
+      {{ title }}
+    </h1>
+    <div class="button animate__animated animate__lightSpeedInRight">
+      <AppButton @action="show">Замовити послугу</AppButton>
     </div>
   </div>
 </template>
 
 <script setup>
-import AppButton from './Button/AppButton.vue';
+import AppButton from "./Button/AppButton.vue";
 
-const title = 'Ефективні рішення для вашого бізнесу';
+const title = "Ефективні рішення для вашого бізнесу";
 
 defineProps({
   show: Function,
 });
 
-const emit = defineEmits(['showModal']);
+const emit = defineEmits(["showModal"]);
 
 function show() {
-  emit('showModal');
+  emit("showModal");
 }
-
 </script>
 
 <style lang="sass" scoped>

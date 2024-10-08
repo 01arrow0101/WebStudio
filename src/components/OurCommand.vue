@@ -4,9 +4,10 @@
       <h2>Наша Команда</h2>
     </div>
     <div class="persons">
-      <CardPerson 
-      v-for="person in persons" :key="person.name"
-      :person="person"
+      <CardPerson
+        v-for="person in persons"
+        :key="person.name"
+        :person="person"
       />
     </div>
   </div>
@@ -14,26 +15,26 @@
 
 <script setup>
 import { ref } from "vue";
-import CardPerson from './CardPerson.vue'
+import CardPerson from "./CardPerson.vue";
 
 const persons = ref([
   {
-    src: "/src/assets/img/person/Igor.jpeg",
+    src: new URL('/src/assets/img/person/Igor.jpeg', import.meta.url).href,
     name: "Ігор Дем'яненко",
     position: "Product Designer",
   },
   {
-    src: "/src/assets/img/person/Olga.jpeg",
+    src: new URL('/src/assets/img/person/Olga.jpeg', import.meta.url).href,
     name: "Ольга Рєпіна",
     position: "Frontend Developer",
   },
   {
-    src: "/src/assets/img/person/Mikola.jpeg",
+    src: new URL('/src/assets/img/person/Mikola.jpeg', import.meta.url).href,
     name: "Микола Тарасов",
     position: "Marketing",
   },
   {
-    src: "/src/assets/img/person/Mihail.jpeg",
+    src: new URL('/src/assets/img/person/Mihail.jpeg', import.meta.url).href,
     name: "Михайло Єрмаков",
     position: "UI Designer",
   },

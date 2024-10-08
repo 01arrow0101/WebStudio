@@ -1,8 +1,13 @@
 <template>
   <div class="wrapper">
-    <div v-for="card in cards" :key="card.title" class="card"  data-aos="fade-up"
-    data-aos-duration="1500"
-    data-aos-anchor-placement="bottom-bottom">
+    <div
+      v-for="card in cards"
+      :key="card.title"
+      class="card"
+      data-aos="fade-up"
+      data-aos-duration="1500"
+      data-aos-anchor-placement="bottom-bottom"
+    >
       <div class="img">
         <img :src="card.img" :alt="card.alt" />
       </div>
@@ -17,28 +22,28 @@ import { ref } from "vue";
 
 const cards = ref([
   {
-    img: "/src/assets/icons/antenna.svg",
+    img:  new URL('/src/assets/icons/antenna.svg', import.meta.url).href,
     alt: "antenna",
     title: "УВАГА ДО ДЕТАЛЕЙ",
     text: "Ідейні міркування, і навіть початок повсякденної роботи з формування позиції.",
   },
   {
-    img: "/src/assets/icons/clock.svg",
+    img:  new URL('/src/assets/icons/clock.svg', import.meta.url).href,
     alt: "clock",
     title: "ПУНКТУАЛЬНІСТЬ",
     text: "Завдання організації, особливо рамки і місце навчання кадрів тягне у себе.",
   },
   {
-    img: "/src/assets/icons/diagram.svg",
+    img:  new URL('/src/assets/icons/diagram.svg', import.meta.url).href,
     alt: "diagram",
     title: "ПЛАНУВАННЯ",
     text: "Так само консультація з широким активом значною мірою зумовлює.",
   },
   {
-    img: "/src/assets/icons/astronaut.svg",
+    img:  new URL('/src/assets/icons/astronaut.svg', import.meta.url).href,
     alt: "astronaut",
     title: "СУЧАСНІ ТЕХНОЛОГІЇ",
-    text: "Значимість цих проблем настільки очевидна, що реалізація планових завдань.",
+    text: "Значність цих проблем настільки очевидна, що реалізація планових завдань.",
   },
 ]);
 </script>

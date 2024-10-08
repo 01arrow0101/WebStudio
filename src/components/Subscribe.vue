@@ -1,21 +1,18 @@
 <template>
-<div class="title-h3">Підпишіться на розсилку</div>
-<label for="email">
-  <input 
-  v-model="value"
-  type="text" placeholder="E-mail">
-</label>
-<button @click="subscribe" class="btn primary">Підписатися</button>
+  <div class="title-h3">Підпишіться на розсилку</div>
+  <label for="email">
+    <input v-model="value" type="text" placeholder="E-mail" />
+  </label>
+  <button @click="subscribe" class="btn primary">Підписатися</button>
 </template>
 
 <script setup>
 import { ref } from "vue";
 
-const value = ref('')
+const value = ref("");
 
-function subscribe(){
-  console.log('Заявка прийнята')
-  
+function subscribe() {
+  console.log("Заявка прийнята");
 }
 </script>
 
@@ -76,9 +73,9 @@ input
     background: url('../src/assets/icons/send.svg') center /cover no-repeat
   &:hover
     background: darken($primary, 15%)
-    cursor: pointer    
+    cursor: pointer
 
 .email
   display: flex
-  flex-direction: column  
+  flex-direction: column
 </style>

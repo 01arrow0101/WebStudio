@@ -5,13 +5,18 @@
       <div @click="isActiveMenu = true" class="btn-burger">
         <div class="btn-line"></div>
       </div>
-      <nav
-      v-if="!isActiveMenu"
-      class="navbar">
+      <nav v-if="!isActiveMenu" class="navbar">
         <div class="menu">
           <ul class="menu-list">
-            <li v-for="(item, key) in ROUTER_PATH" :key="key" :class="{ 'active': activeKey === key }" class="menu-list_item">
-              <router-link :to="item.path" @click="handleClick(key)"> {{ item.title }}</router-link>
+            <li
+              v-for="(item, key) in ROUTER_PATH"
+              :key="key"
+              :class="{ active: activeKey === key }"
+              class="menu-list_item"
+            >
+              <router-link :to="item.path" @click="handleClick(key)">
+                {{ item.title }}</router-link
+              >
             </li>
           </ul>
         </div>
@@ -24,47 +29,47 @@
           <a href="tel:+380981111111">+38 096 111 11 11</a>
         </div>
       </div>
-    <MenuBurger
-      v-if="isActiveMenu"
-      @close="isActiveMenu = false"
-      :items="ROUTER_PATH"
-      :show-menu="isActiveMenu"
-      :tel="'+38 096 111 11 11'"
-      :email="'info@devstudio.com'"
-      :showMenu="isActiveMenu"
-      @action="isActiveMenu = false"
-    />
-</div>
+      <MenuBurger
+        v-if="isActiveMenu"
+        @close="isActiveMenu = false"
+        :items="ROUTER_PATH"
+        :show-menu="isActiveMenu"
+        :tel="'+38 096 111 11 11'"
+        :email="'info@devstudio.com'"
+        :showMenu="isActiveMenu"
+        @action="isActiveMenu = false"
+      />
+    </div>
   </header>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-import {  useRoute } from 'vue-router'
-import { ROUTER_PATH } from '../router/path.js'
-import AppLogo from './AppLogo.vue'
-import MenuBurger from './MenuBurger.vue'
+import { ref, onMounted } from "vue";
+import { useRoute } from "vue-router";
+import { ROUTER_PATH } from "../router/path.js";
+import AppLogo from "./AppLogo.vue";
+import MenuBurger from "./MenuBurger.vue";
 
-const isActiveMenu = ref(false)
-const activeKey = ref(null)
-const route = useRoute()
+const isActiveMenu = ref(false);
+const activeKey = ref(null);
+const route = useRoute();
 
 function handleClick(key) {
-  activeKey.value = key
+  activeKey.value = key;
 }
 
 // Инициализация активного ключа при монтировании компонента
 const initActiveKey = () => {
-  const values = Object.values(ROUTER_PATH)
-  const index = values.findIndex(item => item.path === route.path)
+  const values = Object.values(ROUTER_PATH);
+  const index = values.findIndex((item) => item.path === route.path);
   if (index !== -1) {
-    activeKey.value = Object.keys(ROUTER_PATH)[index]
+    activeKey.value = Object.keys(ROUTER_PATH)[index];
   }
-}
+};
 
 onMounted(() => {
-  initActiveKey()
-})
+  initActiveKey();
+});
 </script>
 
 <style lang="sass" scoped>
@@ -80,7 +85,7 @@ onMounted(() => {
   padding: 24px 0
   @media (max-width: 767px)
     justify-content: space-between
-    padding: 20px 16px    
+    padding: 20px 16px
 .btn-burger
   display: none
   position: absolute
@@ -114,7 +119,7 @@ onMounted(() => {
     height: 1px
     background: #000
     top: -4px
-    left: 0  
+    left: 0
 .navbar
   @media (max-width: 480px)
     display: none

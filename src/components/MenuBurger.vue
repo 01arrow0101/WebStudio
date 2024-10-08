@@ -1,8 +1,9 @@
 <template>
-  <div 
-  @click="$emit('action')"
-  @click.stop
-  class="menu-burger animate__animated animate__fadeInLeft">
+  <div
+    @click="$emit('action')"
+    @click.stop
+    class="menu-burger animate__animated animate__fadeInLeft"
+  >
     <div class="close">
       <button @click="$emit('action')">X</button>
     </div>
@@ -38,7 +39,6 @@
         </li>
       </ul>
     </div>
-
   </div>
 </template>
 
@@ -58,7 +58,6 @@ const social = ["Instagram", "twitter", "Facebook", "LinkedIn"];
 const items = ref(props.items);
 const email = ref(props.email);
 const tel = ref(props.tel);
-
 </script>
 
 <style lang="sass" scoped>
@@ -75,7 +74,7 @@ const tel = ref(props.tel);
   z-index: 999
   display: flex
   flex-direction: column
-  
+
 
 .close
   position: absolute

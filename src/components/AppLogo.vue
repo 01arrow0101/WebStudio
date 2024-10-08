@@ -1,15 +1,17 @@
 <template>
   <a href="#">
-    <div class="logo">Web<span :class="className" class="span">Studio</span></div>
+    <div class="logo">
+      Web<span :class="className" class="span">Studio</span>
+    </div>
   </a>
 </template>
 <script setup>
 const props = defineProps({
-  className:{
+  className: {
     type: String,
-    required: false
-  }
-})
+    required: false,
+  },
+});
 </script>
 <style lang="sass" scoped>
 @import '@/assets/style'
@@ -26,5 +28,5 @@ const props = defineProps({
 .span
   color: #000
 .color
- color: $white  
+ color: $white
 </style>
