@@ -84,14 +84,14 @@ const cards = ref([
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem sint cum molestias accusamus eligendi ipsam doloremque perferendis ullam quam corrupti.",
   },
   {
-    src: "/src/assets/img/portfolio/8.jpeg",
+    src: new URL('/src/assets/img/portfolio/8.jpeg', import.meta.url).href,
     name: "Проєкт LAB",
     category: "Маркетинг",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem sint cum molestias accusamus eligendi ipsam doloremque perferendis ullam quam corrupti.",
   },
   {
-    src: "/src/assets/img/portfolio/9.jpeg",
+    src: new URL('/src/assets/img/portfolio/9.jpeg', import.meta.url).href,
     name: "Growing Business",
     category: "Додатки",
     description:
